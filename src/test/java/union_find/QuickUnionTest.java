@@ -1,6 +1,6 @@
 package union_find;
 
-public class QuickUnionTest extends UnionFindTest {
+class QuickUnionTest extends UnionFindTest {
 
   @Override
   protected UnionFind getUnionFindAlg() {

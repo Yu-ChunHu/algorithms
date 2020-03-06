@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Nested;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public abstract class UnionFindTest {
+abstract class UnionFindTest {
   protected UnionFind unionFind;
 
   @BeforeEach
