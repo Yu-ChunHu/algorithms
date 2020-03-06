@@ -1,8 +1,5 @@
 package union_find;
 
-import union_find.UnionFind;
-import union_find.QuickUnion;
-
 public class QuickUnionTest extends UnionFindTest {
 
   @Override

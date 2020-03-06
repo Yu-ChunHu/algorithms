@@ -11,7 +11,7 @@ public class QuickUnion extends UnionFind {
     nodes[root(p)] = root(q);
   }
 
-  private int root(int n) {
+  protected int root(int n) {
     int i = nodes[n];
     for (; i != nodes[i]; i = nodes[i]);
     return i;
