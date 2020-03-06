@@ -1,20 +1,12 @@
 package union_find;
 
-public class QuickFind {
-  private int[] nodes;
-  private int size;
+public class QuickFind extends UnionFind {
 
   public QuickFind(int size) {
-    this.size = size;
-    initialNode();
+    super(size);
   }
 
-  private void initialNode() {
-    nodes = new int[size];
-    for (int i = 0; i < size; i++)
-      nodes[i] = i;
-  }
-
+  @Override
   public void union(int p, int q) {
     int pVal = nodes[p];
     int qVal = nodes[q];
@@ -23,6 +15,7 @@ public class QuickFind {
         nodes[i] = qVal;
   }
 
+  @Override
   public boolean isConnected(int p, int q) {
     return nodes[p] == nodes[q];
   }
