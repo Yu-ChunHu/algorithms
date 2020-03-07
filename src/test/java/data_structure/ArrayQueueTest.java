@@ -1,8 +1,8 @@
 package data_structure;
 
-class LinkedQueueTest extends QueueTest {
+class ArrayQueueTest extends QueueTest {
   @Override
   protected Queue<Integer> initialQueue() {
-    return new LinkedQueue<>();
+    return new ArrayQueue<>();
   }
 }
