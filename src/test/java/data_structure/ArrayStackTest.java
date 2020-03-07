@@ -1,8 +1,8 @@
 package data_structure;
 
-class LinkedStackTest extends StackTest {
+class ArrayStackTest extends StackTest {
   @Override
   protected Stack<Integer> initialStack() {
-    return new LinkedStack<>();
+    return new ArrayStack<>(10);
   }
 }

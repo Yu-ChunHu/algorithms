@@ -1,8 +1,9 @@
 package data_structure;
 
-public class LinkedStack<T> {
+public class LinkedStack<T> implements Stack<T> {
   LinkedNode<T> first;
 
+  @Override
   public void push(T item) {
     LinkedNode<T> node = new LinkedNode<>(item);
     if (first == null) {
@@ -14,6 +15,7 @@ public class LinkedStack<T> {
     }
   }
 
+  @Override
   public T pop() {
     if (first == null)
       return null;
