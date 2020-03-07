@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
 abstract class StackTest {
-  private Stack<Integer> stack;
+  protected Stack<Integer> stack;
 
   @BeforeEach
   void setUpStack() {
