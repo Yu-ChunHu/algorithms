@@ -8,6 +8,10 @@ public class ArrayQueue<T> implements Queue<T> {
   private int lastIdx;
 
   public ArrayQueue() {
+    init();
+  }
+
+  private void init() {
     items = makeItems(1);
     firstIdx = 0;
     lastIdx = 0;
@@ -23,17 +27,17 @@ public class ArrayQueue<T> implements Queue<T> {
   @Override
   public T dequeue() {
     if (firstIdx >= lastIdx) {
-      firstIdx = 0;
-      lastIdx = 0;
+      init();
       return null;
     }
+    
     T val = items[firstIdx];
     items[firstIdx++] = null;
 
     int trueSize = lastIdx - firstIdx;
     if (items.length / 4 >= trueSize) {
-      T[] newItems = makeItems(trueSize);
-      copyItems(items, newItems, firstIdx);
+      T[] newItems = makeItems(items.length / 2);
+      items = copyItems(items, newItems, firstIdx, lastIdx);
       firstIdx = 0;
       lastIdx = trueSize;
     }

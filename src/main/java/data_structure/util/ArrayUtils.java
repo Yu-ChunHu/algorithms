@@ -13,13 +13,14 @@ public class ArrayUtils {
   }
 
   private static <T> T[] copyItems(T[] items, T[] newItems) {
-    return copyItems(items, newItems, 0);
+    int size = Math.min(items.length, newItems.length);
+    return copyItems(items, newItems, 0, size);
   }
 
-  public static <T> T[] copyItems(T[] items, T[] newItems, int startIdx) {
-    int size = Math.min(items.length, newItems.length);
-    for (int i = startIdx; i < size; i++)
-      newItems[i] = items[i];
+  public static <T> T[] copyItems(T[] items, T[] newItems, int startIdx, int endIdx) {
+    int counter = 0;
+    for (int i = startIdx; i < endIdx; i++)
+      newItems[counter++] = items[i];
     return newItems;
   }
 

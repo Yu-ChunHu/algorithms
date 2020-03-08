@@ -25,9 +25,8 @@ public class ArrayStack<T> implements Stack<T> {
     T val = items[--firstIdx];
     items[firstIdx] = null;
 
-    int divisor = 4;
-    if (firstIdx < items.length / divisor)
-      items = shrinkItemsSize(items, divisor);
+    if (firstIdx < items.length / 4)
+      items = shrinkItemsSize(items, 2);
     return val;
   }
 }
