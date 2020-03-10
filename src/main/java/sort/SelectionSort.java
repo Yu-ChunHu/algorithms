@@ -3,7 +3,7 @@ package sort;
 public class SelectionSort implements Sort {
   @SuppressWarnings("unchecked")
   @Override
-  public <T> void sort(Comparable<T>[] unsorted) {
+  public <T> void sortAlg(Comparable<T>[] unsorted) {
     for (int i = 0; i < unsorted.length - 1; i++) {
       int minIdx = i;
       Comparable<T> minVal = unsorted[i];

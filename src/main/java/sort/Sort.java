@@ -2,7 +2,13 @@ package sort;
 
 @FunctionalInterface
 public interface Sort {
-  <T> void sort(Comparable<T>[] unsorted);
+  default <T> void sort(Comparable<T>[] unsorted) {
+    if (unsorted == null || unsorted.length <= 1)
+      return;
+    sortAlg(unsorted);
+  }
+
+  <T> void sortAlg(Comparable<T>[] unsorted);
 
   static <T> void swap(Comparable<T>[] input, int i, int j) {
     if (i == j)
