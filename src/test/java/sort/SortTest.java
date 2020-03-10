@@ -12,7 +12,8 @@ class SortTest {
   private static Stream<Sort> provideAlgorithm() {
     return Stream.of(
       new SelectionSort(),
-      new InsertionSort()
+      new InsertionSort(),
+      new ShellSort()
     );
   }
 
