@@ -10,6 +10,8 @@ public class InsertionSort implements Sort {
         if (Sort.isGreater(unsorted[j], (T) unsorted[targetIdx])) {
           Sort.swap(unsorted, targetIdx, j);
           targetIdx = j;
+        } else {
+          break;
         }
       }
     }
