@@ -13,7 +13,8 @@ class SortTest {
     return Stream.of(
       new SelectionSort(),
       new InsertionSort(),
-      new ShellSort()
+      new ShellSort(),
+      new MergeSort()
     );
   }
 
