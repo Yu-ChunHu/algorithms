@@ -14,7 +14,8 @@ class SortTest {
       new SelectionSort(),
       new InsertionSort(),
       new ShellSort(),
-      new MergeSort()
+      new MergeSort(),
+      new QuickSort()
     );
   }
 
