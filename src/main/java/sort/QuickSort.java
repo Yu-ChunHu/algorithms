@@ -11,32 +11,29 @@ public class QuickSort implements Sort {
     if (high <= low)
         return;
 
-    int p = partition(unsorted, low, high);
-    sort(unsorted, low, p - 1);
-    sort(unsorted, p + 1, high);
+    int[] lteq = partition(unsorted, low, high);
+    sort(unsorted, low, lteq[0] - 1);
+    sort(unsorted, lteq[1], high);
   }
   
   @SuppressWarnings("unchecked")
-  private <T> int partition(Comparable<T>[] unsorted, int low, int high) {
-    int i = low;
-    int j = high + 1;
+  private <T> int[] partition(Comparable<T>[] unsorted, int low, int high) {
+    // lt eq gt
+    int lt = low;
+    int gt = high;
+    int eq = lt + 1;
+    Comparable<T> pivot = unsorted[low];
 
-    while (true) {
-      while (Sort.isGreater(unsorted[low], (T) unsorted[++i]))
-        if (i == high)
-          break;
+    while (eq <= gt) {
+      int compare = unsorted[eq].compareTo((T) pivot);
 
-      while (Sort.isGreater(unsorted[--j], (T) unsorted[low]))
-        if (j == low)
-          break;
-      
-      if (j <= i)
-        break;
-      
-      Sort.swap(unsorted, i, j);
+      if (compare < 0)
+        Sort.swap(unsorted, lt++, eq++);
+      else if (compare > 0)
+        Sort.swap(unsorted, eq, gt--);
+      else
+        eq++;
     }
-
-    Sort.swap(unsorted, low, j);
-    return j;
+    return new int[] {lt, eq};
   }
 }
