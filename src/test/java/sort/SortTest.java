@@ -11,11 +11,12 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 class SortTest {
   private static Stream<Sort> provideAlgorithm() {
     return Stream.of(
-      new SelectionSort(),
-      new InsertionSort(),
-      new ShellSort(),
-      new MergeSort(),
-      new QuickSort()
+//      new SelectionSort(),
+//      new InsertionSort(),
+//      new ShellSort(),
+//      new MergeSort(),
+//      new QuickSort(),
+      new HeapSort<Integer>(0)
     );
   }
 

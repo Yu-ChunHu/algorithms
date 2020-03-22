@@ -11,10 +11,10 @@ class PriorityQueueTest {
   private static Stream<PriorityQueue> provideImplementation() {
     return Stream.of(
             new SimplePriorityQueue<>(10),
-            new CompleteBinaryHeaps<>(10)
+            new BinaryHeapsPriorityQueue<>(10)
     );
   }
-  
+
   @ParameterizedTest
   @MethodSource("provideImplementation")
   void findTop1(PriorityQueue<Integer> pq) {
